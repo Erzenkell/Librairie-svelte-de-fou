@@ -1,5 +1,5 @@
 <script>
-import Carousel from "../lib/Carousel.svelte";
+
 
     export const prerender = true
     
@@ -10,7 +10,8 @@ import Carousel from "../lib/Carousel.svelte";
         {title: 'd', src: '../bg4.jpg'},
         {title: 'e', src: '../bg5.jpg'},
     ]
-
+    import Carousel from "../lib/Carousel.svelte"
+    import Todo from "../lib/Todo.svelte"
     import Tabs from '../lib/Tab.svelte'
     import Timer from '../lib/Timer.svelte'
     import List from '../lib/List.svelte'
@@ -86,6 +87,9 @@ import Carousel from "../lib/Carousel.svelte";
         <Carousel {images}/>
         <slot />
     </section>
+    <section class="border-solid border-2 border-white-500">
+    <Todo />
+</section>
     
   </main>
   

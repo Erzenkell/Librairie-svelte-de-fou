@@ -1,8 +1,9 @@
 <script>
-    export let buttonType = 'primary';
+    export let buttonType;
     export let flat = false;
     export let inverse = false;
     export let disabled = false
+    
 
 </script>
 

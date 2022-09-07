@@ -1,4 +1,4 @@
-<article class="contact-card">
+<article class="contact-card my-6">
 	<h2>
 		<slot name="name">
 			<span class="missing">Unknown name</span>
@@ -21,6 +21,7 @@
 <style>
 	.contact-card {
 		width: 300px;
+		margin: 40px auto;
 		border: 1px solid #aaa;
 		border-radius: 2px;
 		box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
@@ -34,7 +35,6 @@
 	}
 
 	.address, .email {
-		padding: 0 0 0 1.5em;
 		background:  0 0 no-repeat;
 		background-size: 20px 20px;
 		margin: 0 0 0.5em 0;
