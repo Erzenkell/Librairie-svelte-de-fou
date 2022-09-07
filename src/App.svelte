@@ -1,3 +1,10 @@
+<style>
+  .loader-sample {
+    display: flex;
+    flex-direction: row;
+  }
+</style>
+
 <script>
   import Tabs from './lib/Tab.svelte'
   import Timer from './lib/Timer.svelte'
@@ -7,6 +14,7 @@
   import Modal from './lib/Modal.svelte'
   import Navbar from './lib/Navbar.svelte'
   import Divider from './lib/Divider.svelte'
+  import Loader from './lib/Loader.svelte'
 
   let schools = ['HETIC', 'EEMI', 'Epitech', 'Etna']
   let toStrong = 'HETIC'
@@ -99,5 +107,17 @@
 
   <div class="card">
     <Timer />
+  </div>
+
+  <Divider >      
+    <div slot="dividerContent">
+      Loader
+    </div>
+  </Divider>
+
+  <div class="loader-sample">
+    <Loader/>
+    <Loader size="small"/>
+    <Loader size="large"/>
   </div>
 </main>
