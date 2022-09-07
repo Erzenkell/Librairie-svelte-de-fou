@@ -6,10 +6,12 @@
   import ContactCard from './lib/ContactCard.svelte'
   import Modal from './lib/Modal.svelte'
   import Navbar from './lib/Navbar.svelte'
+  import Dropdown from './lib/dropdown.svelte'
   import Divider from './lib/Divider.svelte'
 
   let schools = ['HETIC', 'EEMI', 'Epitech', 'Etna']
   let toStrong = 'HETIC'
+  let customItems = ['Porsche', 'Ford', 'Ferrari', 'Lexus']
 
   let tabItems = ['Home', 'Not Home', '???']
   let activeItem = 'Home'
@@ -27,18 +29,13 @@
   <!-- <Navbar /> -->
   <Divider >      
     <div slot="dividerContent">
-      Contact Card
+      Dropdown
     </div>
   </Divider>
 
-  <ContactCard>
-    <span slot="name"> M. Sion </span>
-
-    <span slot="address">
-      ICI<br />
-      Pas la bas
-    </span>
-  </ContactCard>
+  <div>
+    <Dropdown items={customItems} />
+  </div>
 
   <Divider >      
     <div slot="dividerContent">
@@ -100,4 +97,20 @@
   <div class="card">
     <Timer />
   </div>
+
+  <Divider >      
+    <div slot="dividerContent">
+      Contact card
+    </div>
+  </Divider>
+
+  <ContactCard>
+    <span slot="name"> M. Sion </span>
+
+    <span slot="address">
+      ICI<br />
+      Pas la bas
+    </span>
+  </ContactCard>
+
 </main>
