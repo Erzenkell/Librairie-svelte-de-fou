@@ -1,10 +1,3 @@
-<style>
-  .loader-sample {
-    display: flex;
-    flex-direction: row;
-  }
-</style>
-
 <script>
   import Tabs from './lib/Tab.svelte'
   import Timer from './lib/Timer.svelte'
@@ -13,7 +6,7 @@
   import ContactCard from './lib/ContactCard.svelte'
   import Modal from './lib/Modal.svelte'
   import Navbar from './lib/Navbar.svelte'
-  import Dropdown from './lib/dropdown.svelte'
+  import Dropdown from './lib/Dropdown.svelte'
   import Divider from './lib/Divider.svelte'
   import Loader from './lib/Loader.svelte'
 
@@ -24,31 +17,32 @@
   let tabItems = ['Home', 'Not Home', '???']
   let activeItem = 'Home'
 
+  let pseudo = 'MyPseudo'
+  let menuItems = ['Home', 'About', 'Contact']
+  let burgerItems = ['Home', 'About', 'Contact', 'Blog', 'Careers', 'Support']
+
   const triggerTabChange = (event) => {
     activeItem = event.detail
   }
 
   let showModal = false
-  let big = false
 </script>
 
 <main>
-  <!-- Navbar -> WORK IN PROGRESS -->
-  <!-- <Navbar /> -->
-  <Divider >      
-    <div slot="dividerContent">
-      Dropdown
-    </div>
+  <Divider>
+    <div slot="dividerContent">Navbar</div>
+  </Divider>
+  <Navbar pseudo={pseudo} menuItems={menuItems} burgerItems={burgerItems}/>
+  <Divider>
+    <div slot="dividerContent">Dropdown</div>
   </Divider>
 
   <div>
     <Dropdown items={customItems} />
   </div>
 
-  <Divider >      
-    <div slot="dividerContent">
-      Modal
-    </div>
+  <Divider>
+    <div slot="dividerContent">Modal</div>
   </Divider>
 
   <button on:click={() => (showModal = true)}> show modal </button>
@@ -60,10 +54,8 @@
     </Modal>
   {/if}
 
-  <Divider >      
-    <div slot="dividerContent">
-      chépa
-    </div>
+  <Divider>
+    <div slot="dividerContent">Bouton</div>
   </Divider>
 
   <Button buttonType="primary">Primary</Button>
@@ -73,10 +65,8 @@
   <Button flat={true}>Flat</Button>
   <Button disabled={true}>Disabled</Button>
 
-  <Divider >      
-    <div slot="dividerContent">
-      Tabs
-    </div>
+  <Divider>
+    <div slot="dividerContent">Tabs</div>
   </Divider>
 
   <Tabs {tabItems} {activeItem} on:tabChange={triggerTabChange} />
@@ -88,28 +78,22 @@
     <p>Where are you ?</p>
   {/if}
 
-  <Divider >      
-    <div slot="dividerContent">
-      List
-    </div>
+  <Divider>
+    <div slot="dividerContent">List</div>
   </Divider>
 
   <List {schools} {toStrong} />
 
-  <Divider >      
-    <div slot="dividerContent">
-      Timer
-    </div>
+  <Divider>
+    <div slot="dividerContent">Timer</div>
   </Divider>
 
   <div class="card">
     <Timer />
   </div>
 
-  <Divider >      
-    <div slot="dividerContent">
-          Contact card
-    </div>
+  <Divider>
+    <div slot="dividerContent">Contact card</div>
   </Divider>
 
   <ContactCard>
@@ -120,17 +104,21 @@
       Pas la bas
     </span>
   </ContactCard>
-  
-  <Divider >      
-    <div slot="dividerContent">
-      Loader
-    </div>
+
+  <Divider>
+    <div slot="dividerContent">Loader</div>
   </Divider>
 
   <div class="loader-sample">
-    <Loader/>
-    <Loader size="small"/>
-    <Loader size="large"/>
+    <Loader />
+    <Loader size="small" />
+    <Loader size="large" />
   </div>
-
 </main>
+
+<style>
+  .loader-sample {
+    display: flex;
+    flex-direction: row;
+  }
+</style>
