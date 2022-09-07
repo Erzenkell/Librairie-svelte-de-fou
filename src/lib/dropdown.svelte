@@ -7,6 +7,13 @@
 </script>
 
 <style>
+
+    .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
     .dropdown {
         display: flex;
         align-items: center;
@@ -32,7 +39,6 @@
         border-radius: 10px;
         width: 150px;
         margin-top: 5px;
-        position: absolute;
     }
 
     .menu > div {
@@ -45,7 +51,7 @@
 </style>
 
 
-<div >
+<div class="flex">
     <div class="dropdown" on:click={displayDropdown}>
         <span>Dropdown</span>
         <img class="arrow" src="src\lib\svg\arrow.svg" alt="">

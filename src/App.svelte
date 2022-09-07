@@ -7,6 +7,7 @@
   import Modal from './lib/Modal.svelte'
   import Navbar from './lib/Navbar.svelte'
   import Dropdown from './lib/dropdown.svelte'
+  import Divider from './lib/Divider.svelte'
 
   let schools = ['HETIC', 'EEMI', 'Epitech', 'Etna']
   let toStrong = 'HETIC'
@@ -26,15 +27,22 @@
 <main>
   <!-- Navbar -> WORK IN PROGRESS -->
   <!-- <Navbar /> -->
+  <Divider >      
+    <div slot="dividerContent">
+      Dropdown
+    </div>
+  </Divider>
 
-  <ContactCard>
-    <span slot="name"> M. Sion </span>
+  <div>
+    <Dropdown items={customItems} />
+  </div>
 
-    <span slot="address">
-      ICI<br />
-      Pas la bas
-    </span>
-  </ContactCard>
+  <Divider >      
+    <div slot="dividerContent">
+      Modal
+    </div>
+  </Divider>
+
   <button on:click={() => (showModal = true)}> show modal </button>
 
   {#if showModal}
@@ -44,12 +52,24 @@
     </Modal>
   {/if}
 
+  <Divider >      
+    <div slot="dividerContent">
+      chépa
+    </div>
+  </Divider>
+
   <Button buttonType="primary">Primary</Button>
   <Button buttonType="secondary">Secondary</Button>
   <Button buttonType="primary" inverse={true}>Inverse Primary</Button>
   <Button buttonType="secondary" inverse={true}>Inverse Secondary</Button>
   <Button flat={true}>Flat</Button>
   <Button disabled={true}>Disabled</Button>
+
+  <Divider >      
+    <div slot="dividerContent">
+      Tabs
+    </div>
+  </Divider>
 
   <Tabs {tabItems} {activeItem} on:tabChange={triggerTabChange} />
   {#if activeItem === 'Home'}
@@ -60,13 +80,37 @@
     <p>Where are you ?</p>
   {/if}
 
+  <Divider >      
+    <div slot="dividerContent">
+      List
+    </div>
+  </Divider>
+
   <List {schools} {toStrong} />
+
+  <Divider >      
+    <div slot="dividerContent">
+      Timer
+    </div>
+  </Divider>
 
   <div class="card">
     <Timer />
   </div>
 
-  <div>
-    <Dropdown items={customItems} />
-  </div>
+  <Divider >      
+    <div slot="dividerContent">
+      Contact card
+    </div>
+  </Divider>
+
+  <ContactCard>
+    <span slot="name"> M. Sion </span>
+
+    <span slot="address">
+      ICI<br />
+      Pas la bas
+    </span>
+  </ContactCard>
+
 </main>
