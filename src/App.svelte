@@ -6,9 +6,11 @@
   import ContactCard from './lib/ContactCard.svelte'
   import Modal from './lib/Modal.svelte'
   import Navbar from './lib/Navbar.svelte'
+  import Dropdown from './lib/dropdown.svelte'
 
   let schools = ['HETIC', 'EEMI', 'Epitech', 'Etna']
   let toStrong = 'HETIC'
+  let customItems = ['Porsche', 'Ford', 'Ferrari', 'Lexus']
 
   let tabItems = ['Home', 'Not Home', '???']
   let activeItem = 'Home'
@@ -62,5 +64,9 @@
 
   <div class="card">
     <Timer />
+  </div>
+
+  <div>
+    <Dropdown items={customItems} />
   </div>
 </main>
