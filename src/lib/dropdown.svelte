@@ -59,8 +59,8 @@
 
 {#if dropdownMenu}
     <div class="menu">
-        {#each items as fruit}
-            <div class="item">{fruit}</div>
+        {#each items as item}
+            <div class="item">{item}</div>
         {/each}
     </div>
 {/if}
