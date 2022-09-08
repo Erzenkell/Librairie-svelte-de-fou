@@ -7,7 +7,7 @@
 
 </script>
 
-<div class="tabs">
+<div class="tabs my-8">
     <ul>
         {#each tabItems as item}
             <li on:click={() => dispatch('tabChange', item)}>
