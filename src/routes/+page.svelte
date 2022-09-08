@@ -1,6 +1,4 @@
 <script>
-
-
     export const prerender = true
     
     let images = [
@@ -142,7 +140,6 @@
     <section class="border-solid border-2 border-white-500">
 
       <Todo />
-    </section>
-    
-  </main>
+    </section>    
+</main>
   
