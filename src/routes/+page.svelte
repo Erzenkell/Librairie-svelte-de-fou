@@ -19,6 +19,7 @@
     import ContactCard from '../lib/ContactCard.svelte'
     import Modal from '../lib/Modal.svelte'
     import Navbar from '../lib/Navbar.svelte'
+    import Divider from '../lib/Divider.svelte'
   
     let schools = ['HETIC', 'EEMI', 'Epitech', 'Etna']
     let toStrong = 'HETIC'
@@ -34,57 +35,93 @@
     let big = false
 </script>
 
-<!-- <h1 class="bg-indigo-100">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
-
-
-
   
-  <main>
-    <!-- Navbar -> WORK IN PROGRESS -->
-    <!-- <Navbar /> -->
-  
-    <ContactCard>
-      <span slot="name"> M. Sion </span>
-  
-      <span slot="address">
-        ICI<br />
-        Pas la bas
-      </span>
-    </ContactCard>
-    <button on:click={() => (showModal = true)}> show modal </button>
-  
-    {#if showModal}
-      <Modal on:close={() => (showModal = false)}>
-        <h2 slot="header">Coucou</h2>
-        <p>Je suis le text</p>
-      </Modal>
-    {/if}
-  
-    <Button buttonType="primary">Primary</Button>
-    <Button buttonType="secondary">Secondary</Button>
-    <Button buttonType="primary" inverse={true}>Inverse Primary</Button>
-    <Button buttonType="secondary" inverse={true}>Inverse Secondary</Button>
-    <Button flat={true}>Flat</Button>
-    <Button disabled={true}>Disabled</Button>
-  
-    <Tabs {tabItems} {activeItem} on:tabChange={triggerTabChange} />
-    {#if activeItem === 'Home'}
-      <p>Welcome Home</p>
-    {:else if activeItem === 'Not Home'}
-      <p>Welcome Not Home</p>
-    {:else}
-      <p>Where are you ?</p>
-    {/if}
-  
-    <List {schools} {toStrong} />
-  
-    <div class="card">
-      <Timer />
+<main>
+  <!-- Navbar -> WORK IN PROGRESS -->
+  <!-- <Navbar /> -->
+  <Divider >      
+    <div slot="dividerContent">
+      Contact Card
     </div>
+  </Divider>
+
+  <ContactCard>
+    <span slot="name"> M. Sion </span>
+
+    <span slot="address">
+      ICI<br />
+      Pas la bas
+    </span>
+  </ContactCard>
+
+  <Divider >      
+    <div slot="dividerContent">
+      Modal
+    </div>
+  </Divider>
+
+  <button on:click={() => (showModal = true)}> show modal </button>
+
+  {#if showModal}
+    <Modal on:close={() => (showModal = false)}>
+      <h2 slot="header">Coucou</h2>
+      <p>Je suis le text</p>
+    </Modal>
+  {/if}
+
+  <Divider >      
+    <div slot="dividerContent">
+      chépa
+    </div>
+  </Divider>
+
+  <Button buttonType="primary">Primary</Button>
+  <Button buttonType="secondary">Secondary</Button>
+  <Button buttonType="primary" inverse={true}>Inverse Primary</Button>
+  <Button buttonType="secondary" inverse={true}>Inverse Secondary</Button>
+  <Button flat={true}>Flat</Button>
+  <Button disabled={true}>Disabled</Button>
+
+  <Divider >      
+    <div slot="dividerContent">
+      Tabs
+    </div>
+  </Divider>
+
+  <Tabs {tabItems} {activeItem} on:tabChange={triggerTabChange} />
+  {#if activeItem === 'Home'}
+    <p>Welcome Home</p>
+  {:else if activeItem === 'Not Home'}
+    <p>Welcome Not Home</p>
+  {:else}
+    <p>Where are you ?</p>
+  {/if}
+
+  <Divider >      
+    <div slot="dividerContent">
+      List
+    </div>
+  </Divider>
+
+  <List {schools} {toStrong} />
+
+  <Divider >      
+    <div slot="dividerContent">
+      Timer
+    </div>
+  </Divider>
+
+  <div class="card">
+    <Timer />
+  </div>
+
+  <Divider >      
+    <div slot="dividerContent">
+      Carousel de fou
+    </div>
+  </Divider>
 
     <section class='flex flex-col items-center my-10'>
-      <h2>Composant carousel de fou</h2>
       <br>
       <p>Carousel simple fait avec Svelte & Tailwind, fonctionnalité 'magnétique', peut comprendre n'importe quel nombre de photos.</p>
       <br> 
@@ -92,7 +129,12 @@
         <slot />
     </section>
 
-    <h2>Composant Todo list de fou</h2>
+    <Divider >      
+      <div slot="dividerContent">
+        Todo list de fou
+      </div>
+    </Divider>
+
     <br>
     <p>Todo list stylisée avec Tailwind,ajout et suppression d'éléments, checkbox de complétion, pas d'utilisation de localstorage.</p>
     <br> 
