@@ -18,6 +18,7 @@
     import Modal from '../lib/Modal.svelte'
     import Navbar from '../lib/Navbar.svelte'
     import Divider from '../lib/Divider.svelte'
+    import Dropdown from "../lib/Dropdown.svelte"
   
     let schools = ['HETIC', 'EEMI', 'Epitech', 'Etna']
     let toStrong = 'HETIC'
@@ -112,6 +113,14 @@
   <div class="card">
     <Timer />
   </div>
+
+  <Divider >      
+    <div slot="dividerContent">
+      Dropdown
+    </div>
+  </Divider>
+
+  <Dropdown />
 
   <Divider >      
     <div slot="dividerContent">
