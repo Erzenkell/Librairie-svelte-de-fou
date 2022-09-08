@@ -84,12 +84,23 @@
     </div>
 
     <section class='flex flex-col items-center my-10'>
-        <Carousel {images}/>
+      <h2>Composant carousel de fou</h2>
+      <br>
+      <p>Carousel simple fait avec Svelte & Tailwind, fonctionnalité 'magnétique', peut comprendre n'importe quel nombre de photos.</p>
+      <br> 
+      <Carousel {images}/>
         <slot />
     </section>
+
+    <h2>Composant Todo list de fou</h2>
+    <br>
+    <p>Todo list stylisée avec Tailwind,ajout et suppression d'éléments, checkbox de complétion, pas d'utilisation de localstorage.</p>
+    <br> 
+
     <section class="border-solid border-2 border-white-500">
-    <Todo />
-</section>
+
+      <Todo />
+    </section>
     
   </main>
   
